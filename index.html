@@ -109,6 +109,7 @@
         var graph_arr = [['Order ID', 'Time Taken', { role: 'style' }]];
         var bar_color = [];
        $.getJSON('https://spreadsheets.google.com/feeds/list/1OGP-MFwMD299BGfCNeFTBbNwsgY-b8IJbtYdJfG0blQ/5/public/full?alt=json',function(data){
+       if(data.feed.entry !== undefined){
        var trHTML = '';
 
             	
@@ -216,7 +217,7 @@
       var chart = new google.visualization.ColumnChart(document.getElementById('column_chart'));
       chart.draw(data_2, options);  
    
-//}
+}
 });
 
 }
